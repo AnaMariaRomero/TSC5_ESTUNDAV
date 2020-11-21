@@ -1,0 +1,53 @@
+<mat-card>
+  <h1>¿Cómo calcular las cerámicas que necesito para cubrir una habitación?</h1>
+  <p>Primer paso: tenemos que calcular cuántos metros cuadrados tenemos en la habitación, para ello debemos calcular el área de dicha habitación.
+    La habitación donde tenemos que colocar las cerámicas es <a (click)="rectangular()">rectangular</a> de 3 metros (m) de altura por 6 metros (m) de base por lo que el área se calcula multiplicando base x altura <a (click)="basexaltura()"> (A=bxh)</a> 
+  </p>
+  <img mat-card-image src="..\src\assets\images\principal.jpg" alt="Principal">
+</mat-card>
+<mat-card>
+    <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Opción 1">
+          <h3>Caja 1: contiene 6 cerámicas y cuesta $650</h3>
+          
+          Entonces calculamos cuantas cerámicas necesitamos para los 18 m^2de la siguiente forma, 
+          Usamos Regla de 3 simple:
+                  0,16m^2--------------------1 cerámica
+                    18m^2---------------------      (18x 1)/0,16=112,5
+                  Luego calculamos cuántas cajas hay que comprar:
+                  13 cerámicas---------------1 caja
+                  112,5 cerámicas………….   (112,5x 1)/13=8,6
+          Significa que tenemos que comprar 9 cajas    
+          Por lo que vamos a gastar     9 x $600=    $5400 y tenemos un sobrante  de 4, 5 cerámicas
+                  
+          <button (click)="open()">¿qué es la regla de 3 simple?</button>
+          </mat-tab>
+        
+        <mat-tab label="Opción 2">
+          <h3>Caja 2: contiene 16 cerámicas y cuesta $550</h3>
+          Cada cerámica tiene un área de  0,35 m x 0,35 m =0,1225 m2
+                0,1225 m2-------------1 cerámica
+                18 m2      ------------------  18x1/0,1225=146,9…..
+                16 cerámicas----------1 caja
+                146,9 cerámicas --------------146,9x1/16=9,18….       
+  
+          Tengo que comprar 10 cajas a $550     = $ 5.500 con un sobrante de aprox 13 cerámicas
+
+        </mat-tab>
+        <mat-tab label="Opción 3">
+          <h3>Caja 3: contiene 13 cerámicas y cuesta $600</h3>
+          Cada cerámica tiene un área de 0,60 m x 0,60 m = 0,36 m2
+                0,36 m ------------1 cerámica
+                18  m2    ----------------50 cerámicas
+                6 cerámicas  ------------ 1 caja
+                50 cerámicas  ---------------8,3333
+          Hay que comprar 9 cajas a $650=  $5.850     con un sobrante de 4   
+          Conclusión, en cuanto a costos la mejor opción es la opción 1 
+
+        </mat-tab>
+      </mat-tab-group>
+</mat-card>
+
+<mat-card>¿Cómo calcular la cantidad de cerámica que necesito? 
+  <a href="https://youtu.be/Pv5x1dUdotY">Video explicativo</a>
+</mat-card>

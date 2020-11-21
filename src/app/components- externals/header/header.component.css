@@ -1,0 +1,16 @@
+.content-header{
+    display: flex;
+    background-color: #0c467c;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.titulo{
+    color: white;
+    text-align: center;
+}
+
+.button-menu{
+    background-color: #0c467c;
+    color: white;
+}

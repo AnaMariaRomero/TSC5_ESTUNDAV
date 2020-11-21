@@ -1,0 +1,13 @@
+<mat-toolbar class="content-header" fxLayout="row">
+    <button mat-flat-button [matMenuTriggerFor]="menu" class="button-menu" fxFlex="10%">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <!--al lado de button o antes del > podría ir una funcion para que haga algo el menu
+            (click)="ejemplodecomocolocarfuncionaparaquehagaalgoelboton()"-->
+        <button mat-menu-item >Actividades Complejas</button>
+        <button mat-menu-item>Actividades Simples</button>
+    </mat-menu>
+    <mat-divider></mat-divider>
+    <span class="titulo" fxLayoutAlign='center center' fxShow fxHide.xs='true' fxShow.gt-xs="true"> Escuela Secundaria Técnica UNDAV </span>
+</mat-toolbar>
