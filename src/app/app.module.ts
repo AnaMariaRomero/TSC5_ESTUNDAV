@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-
-import { ProblemsComponent } from './components-principals/problems/problems.component';
 import { ContentRootComponent } from './components-principals/content-root/content-root.component'
 import { HeaderComponent } from './components- externals/header/header.component';
 import { FooterComponent } from './components- externals/footer/footer.component';
@@ -14,18 +12,22 @@ import { PopUp1Component } from './components-principals/pop-ups/pop-up1/pop-up1
 import { PopUp2Component } from './components-principals/pop-ups/pop-up2/pop-up2.component';
 import { PopUp3Component } from './components-principals/pop-ups/pop-up3/pop-up3.component';
 import { PopUp4Component } from './components-principals/pop-ups/pop-up4/pop-up4.component';
+import { Problem1Component } from './components-principals/problems/problem1/problem1.component';
+import { Problem2Component } from './components-principals/problems/problem2/problem2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ProblemsComponent,
+    Problem1Component,
     ContentRootComponent,
     PopUp1Component,
     PopUp2Component,
     PopUp3Component,
-    PopUp4Component
+    PopUp4Component,
+    Problem1Component,
+    Problem2Component
   ],
   imports: [
     BrowserModule,
