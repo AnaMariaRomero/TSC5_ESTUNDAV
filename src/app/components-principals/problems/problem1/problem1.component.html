@@ -1,66 +1,128 @@
-<mat-card>
-  <mat-card-header><h1>¿Cómo calcular las cerámicas que necesito para cubrir una habitación?</h1></mat-card-header>
-  <mat-card-content>
-  <p>Primer paso: tenemos que calcular cuántos metros cuadrados tenemos en la habitación, para ello debemos calcular el área de dicha habitación.
-      La habitación donde tenemos que colocar las cerámicas es <a (click)="rectangular()"><strong>rectangular</strong></a> 
-      de 3 metros (m) de altura por 6 metros (m) de base por lo que el área se calcula multiplicando base x altura <a (click)="basexaltura()"><strong> (A=bxh)</strong></a> 
-  </p>
-  <img mat-card-image class="image-principal" src="assets\images\principal.jpg" alt="Principal">
-  </mat-card-content>  
-  <mat-card>      
-    <mat-card-header>¿Cómo calcular la cantidad de cerámica que necesito? </mat-card-header>
-      <mat-card-content>
-        <p>  Video explicativo</p>
-    <a href="https://youtu.be/Pv5x1dUdotY"> <span class="material-icons md-36">play_circle_filled</span></a> 
-    
-  </mat-card-content>
-  </mat-card>
+<div class="content-principal"> 
+  <div>
+      <h2>Enunciado</h2>
+    <div class="problem">
+        Deseamos cubrir una habitacion de 18 metros^2 con ceramicas de manera tal que el gasto sea el minimo posible.
+        Nuestro proveedor actualmente cuenta con tres tipos de cajas diferentes:
+      
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z2 table-content">
+        <ng-container matColumnDef="box">
+          <th mat-header-cell *matHeaderCellDef> <b> Caja </b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.box}} </td>
+        </ng-container>
+        <ng-container matColumnDef="content">
+          <th mat-header-cell *matHeaderCellDef> <b> Contenido </b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  <div> 
+    <div class="help">
+      <h3><b> <span class="material-icons icon-help">live_help</span> ¿Cómo calcular las cerámicas que necesito para cubrir la habitación?</b></h3>
+      <p>Tenemos que calcular cuántos metros cuadrados tenemos en la habitación, para ello debemos calcular el área de dicha habitación.
+      La habitación donde tenemos que colocar las cerámicas es <u><a (click)="rectangular()"><strong>rectangular</strong></a></u> 
+      de 3 metros (m) de altura por 6 metros (m) de base por lo que el área se calcula multiplicando base x altura 
+      <u><a (click)="basexaltura()"><strong>(A=bxh)</strong></a> </u> 
+      </p>
+      <img  mat-card-image class="image-principal" src="assets\images\principal.jpg" alt="Principal">
+    </div>
+      <div class="card">
+        <div fxLayoutAlign="rigth center">
+            <p class="rter"> ¿No sabes cómo empezar? ¡Click acá! </p>
+            <a mat-stroked-button href="https://youtu.be/Pv5x1dUdotY">
+              <span class="material-icons icon">play_circle_filled</span>
+            </a> 
+        </div>
+      </div>     
+    </div>
 
+  <mat-card class="answer-container">
+    <h2>Respuesta:</h2>
+    <div fxLayout.gt-xs="row wrap" fxLayout.lt-md="column"  fxLayoutAlign="space-around">
+        <mat-form-field  appearance="fill">
+          <mat-label>Caja a comprar</mat-label>
+          <mat-select [(ngModel)]="box">
+            <mat-option value="1">Caja Uno</mat-option>
+            <mat-option value="2">Caja Dos</mat-option>
+            <mat-option value="3">Caja Tres</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Cantidad a comprar</mat-label>
+          <input matInput type="number" [(ngModel)]="quantity" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Total a gastar en pesos</mat-label>
+          <input matInput [(ngModel)]="total" type="number" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Ceramicas sobrantes</mat-label>
+          <input matInput [(ngModel)]="ceramics" type="number" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Justificar respuesta</mat-label>
+          <textarea matInput [(ngModel)]="justify"></textarea>
+        </mat-form-field>
+      </div>
+      <mat-card-actions class="button-send">
+        <button mat-raised-button type="submit" class="submit-button" (click)="enviarRespuesta()">Enviar</button>
+      </mat-card-actions>
+    </mat-card>
+<div>
+  <mat-card *ngIf="answer1"> 
+      <mat-card-header><h3>¡CORRECTO! Caja 1: contiene 6 cerámicas y cuesta $650</h3></mat-card-header>
+        <pre>
+        Entonces calculamos cuantas cerámicas necesitamos para los 18 m^2de la siguiente forma, 
+        Usamos Regla de 3 simple:
+                0,16m^2--------------------1 cerámica
+                  18m^2---------------------      (18x 1)/0,16=112,5
+                Luego calculamos cuántas cajas hay que comprar:
+                13 cerámicas---------------1 caja
+                112,5 cerámicas………….   (112,5x 1)/13=8,6
+        Significa que tenemos que comprar 9 cajas    
+        Por lo que vamos a gastar     9 x $600=    $5400 y tenemos un sobrante  de 4, 5 cerámicas
+        </pre>        
+        <button mat-stroked-button color="primary"(click)="open()">¿qué es la regla de 3 simple?</button>
+  </mat-card>        
+  <mat-card *ngIf="answer2">
+    <mat-card-header><h3>¡INCORRECTO!</h3></mat-card-header>
+    <mat-card-content>
+      <p>Veamos porqué</p>
+      <p>Caja 2: contiene 16 cerámicas y cuesta $550</p>
+    <pre>
+    Cada cerámica tiene un área de  0,35 m x 0,35 m =0,1225 m2
+          0,1225 m2-------------1 cerámica
+          18 m2      ------------------  18x1/0,1225=146,9…..
+          16 cerámicas----------1 caja
+          146,9 cerámicas --------------146,9x1/16=9,18….       
+
+    Tengo que comprar 10 cajas a $550     = $ 5.500 con un sobrante de aprox 13 cerámicas
+    </pre>   
+    <p>Caja 3: contiene 13 cerámicas y cuesta $600</p> 
+    <pre>
+    Cada cerámica tiene un área de 0,60 m x 0,60 m = 0,36 m2
+            0,36 m ------------1 cerámica
+            18  m2    ----------------50 cerámicas
+            6 cerámicas  ------------ 1 caja
+            50 cerámicas  ---------------8,3333
+    Hay que comprar 9 cajas a $650=  $5.850     con un sobrante de 4   
+    Conclusión, en cuanto a costos la mejor opción es la opción 1 
+    </pre>
+    </mat-card-content>    
   </mat-card>
-  <mat-card>
-      <mat-tab-group mat-align-tabs="start">
-          <mat-tab label="Opción 1">
-            <mat-card-header><h3>Caja 1: contiene 6 cerámicas y cuesta $650</h3></mat-card-header>
-            <pre>
-            Entonces calculamos cuantas cerámicas necesitamos para los 18 m^2de la siguiente forma, 
-            Usamos Regla de 3 simple:
-                    0,16m^2--------------------1 cerámica
-                      18m^2---------------------      (18x 1)/0,16=112,5
-                    Luego calculamos cuántas cajas hay que comprar:
-                    13 cerámicas---------------1 caja
-                    112,5 cerámicas………….   (112,5x 1)/13=8,6
-            Significa que tenemos que comprar 9 cajas    
-            Por lo que vamos a gastar     9 x $600=    $5400 y tenemos un sobrante  de 4, 5 cerámicas
-            </pre>        
-            <button mat-stroked-button color="primary"(click)="open()">¿qué es la regla de 3 simple?</button>
-            </mat-tab>
-          
-          <mat-tab label="Opción 2">
-            <mat-card-header><h3>Caja 2: contiene 16 cerámicas y cuesta $550</h3></mat-card-header>
-            <pre>
-            Cada cerámica tiene un área de  0,35 m x 0,35 m =0,1225 m2
-                  0,1225 m2-------------1 cerámica
-                  18 m2      ------------------  18x1/0,1225=146,9…..
-                  16 cerámicas----------1 caja
-                  146,9 cerámicas --------------146,9x1/16=9,18….       
-    
-            Tengo que comprar 10 cajas a $550     = $ 5.500 con un sobrante de aprox 13 cerámicas
-            </pre>   
-          </mat-tab>
-          <mat-tab label="Opción 3">
-          <mat-card-header><h3>Caja 3: contiene 13 cerámicas y cuesta $600</h3></mat-card-header>
-          <mat-card-content>  
-          <pre>
-          Cada cerámica tiene un área de 0,60 m x 0,60 m = 0,36 m2
-                  0,36 m ------------1 cerámica
-                  18  m2    ----------------50 cerámicas
-                  6 cerámicas  ------------ 1 caja
-                  50 cerámicas  ---------------8,3333
-          Hay que comprar 9 cajas a $650=  $5.850     con un sobrante de 4   
-          Conclusión, en cuanto a costos la mejor opción es la opción 1 
-          </pre>
-          </mat-card-content>    
-          </mat-tab>
-        </mat-tab-group>
+  <mat-card *NGiF="answer3">
+    <mat-card-header><h3>¡NO HAGAS TRAMPA!</h3></mat-card-header>
   </mat-card>
-  
+  </div>
+</div>

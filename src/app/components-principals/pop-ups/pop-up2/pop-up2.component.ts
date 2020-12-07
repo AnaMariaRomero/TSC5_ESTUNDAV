@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogData } from '../../problems/problem1/problem1.component';
 
 
 
@@ -11,7 +10,7 @@ import { DialogData } from '../../problems/problem1/problem1.component';
 })
 export class PopUp2Component implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<PopUp2Component>, @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  constructor(public dialogRef: MatDialogRef<PopUp2Component>) { }
 
   ngOnInit(): void {
   }

@@ -1,1 +1,11 @@
-<p>pop-up4 works!</p>
+<div>
+    <div *ngIf="recievedData">
+    <h3>Esto es lo que usted contestó:</h3>
+    <p><b>Caja a comprar: </b>{{recievedData.box}}</p>
+    <p><b>Justificación de la respuesta: </b> {{recievedData.justify}}</p>
+    <p><b>Ceramicas sobrantes: </b> {{recievedData.ceramics}}</p>
+    <p><b>Cantidad a comprar: </b> {{recievedData.quantity}}</p>
+    <p><b>Total a gastar: </b> {{recievedData.total}}</p>
+    </div>
+    <button (click)="close()">Ok</button>
+</div>

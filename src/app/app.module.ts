@@ -14,6 +14,7 @@ import { PopUp3Component } from './components-principals/pop-ups/pop-up3/pop-up3
 import { PopUp4Component } from './components-principals/pop-ups/pop-up4/pop-up4.component';
 import { Problem1Component } from './components-principals/problems/problem1/problem1.component';
 import { Problem2Component } from './components-principals/problems/problem2/problem2.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,17 +27,17 @@ import { Problem2Component } from './components-principals/problems/problem2/pro
     PopUp2Component,
     PopUp3Component,
     PopUp4Component,
-    Problem1Component,
     Problem2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[PopUp1Component]
+  entryComponents:[PopUp1Component, PopUp4Component]
 })
 export class AppModule { }

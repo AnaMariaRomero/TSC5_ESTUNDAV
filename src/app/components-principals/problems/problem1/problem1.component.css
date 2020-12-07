@@ -1,9 +1,77 @@
 .image-principal{
     width: 20%; 
     height: 20%;
+    text-align: center;
 }
 .material-icons.md-36 { font-size: 36px; }
 
 #video-youtube{
     text-align: center;
+}
+
+.answer-container{
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+  }
+
+.table-content{
+    margin-top: 10px;
+}
+
+.problem{
+    justify-content: center;
+    align-content: center;
+}
+.problem img{
+    object-fit: contain;
+}
+
+.help{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon{
+    color:red;
+}
+
+.icon-help{
+    color:#ffb800
+}
+
+.rter{
+    padding-top:8px;
+    padding-right:3px;
+}
+
+.box .cdk-drag-animating {
+    transition: transform 250ms;
+  }
+
+.card{
+    box-shadow: 0 0px 5px 0 rgba(253, 141, 85, 0.2);
+    transition: 0.3s;
+    max-width: 10%;
+    min-width: 315px;
+    background-color: rgb(244, 241, 238);
+
+}
+
+.submit-button{
+    color: #fff;
+    background-color: #4CAF50;
+}
+
+.problem table-content{
+    align-content: center;
+    max-width: 70%;
+}
+
+.content-principal{
+    padding: 25px;
 }

@@ -27,6 +27,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -85,7 +86,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
   ]
 })
 export class MaterialModule { }
